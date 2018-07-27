@@ -1,4 +1,4 @@
-(defproject cljs.java-time "0.1.0"
+(defproject cljs.java-time "0.1.1"
   :description "jsr-310 (java.time) api in Clojurescript"
   :url "http://github.com/henryw374/cljs.java-time"
   :license {:name "Eclipse Public License"

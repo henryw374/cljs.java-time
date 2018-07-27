@@ -6,7 +6,6 @@
 (def Duration (.. js/JSJoda -Duration))
 (def LocalDate (.. js/JSJoda -LocalDate))
 (def LocalTime (.. js/JSJoda -LocalTime))
-
 (def ZonedDateTime (.. js/JSJoda -ZonedDateTime))
 (def LocalDateTime (.. js/JSJoda -LocalDateTime))
 (def Year (.. js/JSJoda -Year))
@@ -23,6 +22,8 @@
 (def Temporal (.. js/JSJoda -Temporal))
 (def TemporalAmount (.. js/JSJoda -TemporalAmount))
 (def Date js/Date)
+(def DateTimeFormatter (.. js/JSJoda -DateTimeFormatter))
+(def ResolverStyle (.. js/JSJoda -ResolverStyle))
 
 ;; Following are not yet implemented in js-joda https://github.com/js-joda/js-joda/issues/165
 (def OffsetDateTime (.. js/JSJoda -ZonedDateTime))
