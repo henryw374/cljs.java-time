@@ -1,9 +1,9 @@
-(defproject cljs.java-time "0.1.5"
+(defproject cljs.java-time "0.1.6"
   :description "jsr-310 (java.time) api in Clojurescript"
   :url "http://github.com/henryw374/cljs.java-time"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
-  :dependencies [[cljsjs/js-joda "1.9.2-0"]]
+  :dependencies [[cljsjs/js-joda "1.9.2-1"]]
   :profiles {:dev
              {:source-paths ["dev"]
               :dependencies [[org.clojure/clojure "1.9.0"]
