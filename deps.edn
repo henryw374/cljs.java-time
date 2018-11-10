@@ -1,0 +1,11 @@
+{:paths ["src" "resources"]
+ :aliases
+        {:dev
+         {:extra-deps
+                       {com.bhauman/figwheel-main {:mvn/version "0.1.9"}
+                        org.clojure/clojurescript {:mvn/version "1.10.439"}}
+          :extra-paths ["dev" "test"]}
+         :test-cljs {
+                     :extra-paths ["test" "cljs-test-runner-out/gen"]
+                     :extra-deps {olical/cljs-test-runner {:mvn/version "3.2.0"}}
+                     :main-opts   ["-m" "cljs-test-runner.main" "-c" "resources/deps.cljs"]}}}

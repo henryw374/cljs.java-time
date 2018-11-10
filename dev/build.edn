@@ -1,0 +1,6 @@
+{:output-dir    "out"
+ :output-to     "out/main.js"
+ :optimizations :none
+ :main          cljs.java-time.extend-eq-and-compare
+ :install-deps  true
+ :npm-deps      {:js-joda "1.9.2"}}
