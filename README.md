@@ -7,7 +7,17 @@ and for tagged literals that read and print these objects, see [jsr310-tagged-li
 
 ## Usage
 
-get it from [Clojars](https://clojars.org/cljs.java-time) 
+get it from [Clojars](https://clojars.org/cljs.java-time)
+ 
+To use this library, you need npm installed and in your path. 
+
+Also, in your cljs build:
+ 
+```
+:npm-deps {}
+:install-deps true
+
+``` 
 
 ```
 (require '[java.time :refer [LocalDate]])
