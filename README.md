@@ -21,6 +21,19 @@ If you would like to be able to use `=` and `sort` with the java.time objects
 (require 'cljs.java-time.extend-eq-and-compare)
 ```
 
+To write cross platform code that calls any getter methods on java.time objects, use the
+`cljs.java-time.interop/getter` macro
+
+### Shadow Cljs
+
+The npm library that provides the jsr-310 api is provided via Cljsjs, foreign-libs. To make this work with
+Shadow, add the following dependency:
+
+`[thheller/shadow-cljsjs "0.0.16"]`
+
+See [this demo](https://github.com/henryw374/tick-on-shadow-cljs-demo) for more info
+
+
 ## License
 
 Copyright © 2018 Widd Industries
