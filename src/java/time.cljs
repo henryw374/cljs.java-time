@@ -16,8 +16,6 @@
 (def Clock (.. js/JSJoda -Clock))
 (def ZoneOffset (.. js/JSJoda -ZoneOffset))
 
-;;todo - remove this after js-joda 299 fixed
-(set! (.-valueOf Month) (fn [x] (goog.object.get Month x)))
 ;; Following are not yet implemented in js-joda https://github.com/js-joda/js-joda/issues/165
 (def OffsetDateTime (.. js/JSJoda -ZonedDateTime))
 (def OffsetTime (.. js/JSJoda -LocalTime))

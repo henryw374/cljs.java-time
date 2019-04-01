@@ -48,3 +48,28 @@
   ZoneId           (-equiv [x y] (.equals x y))
   DayOfWeek        (-equiv [x y] (.equals x y))
   Month            (-equiv [x y] (.equals x y)))
+
+(extend-protocol IHash
+  Period           (-hash [x] (.hashCode x))
+  LocalDate        (-hash [x] (.hashCode x))
+  LocalDateTime    (-hash [x] (.hashCode x))
+  ZonedDateTime    (-hash [x] (.hashCode x))
+  OffsetTime       (-hash [x] (.hashCode x))
+  Instant          (-hash [x] (.hashCode x))
+  OffsetDateTime   (-hash [x] (.hashCode x))
+  LocalTime        (-hash [x] (.hashCode x))
+  ; todo - do a PR with the hashCode methods to js-joda
+  ; note - impls copied from java.time
+  Duration         (-hash [x]
+                     (+ (* (.nano x) 51)
+                       (int
+                         (bit-xor 
+                           (.seconds x)
+                           (unsigned-bit-shift-right (.seconds x) 32)))))
+  Year (-hash [x] (.value x))
+  YearMonth        (-hash [x] (bit-xor 
+                                (.year x) 
+                                (bit-shift-left (.monthValue x) 27)) )
+  ZoneId           (-hash [x] (.hashCode x))
+  DayOfWeek        (-hash [x] (.value x))
+  Month            (-hash [x] (.value x)))
