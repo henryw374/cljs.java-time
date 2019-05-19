@@ -9,8 +9,16 @@ Underneath this lib is a pure JS implementation of java.time. This extends that 
 adding Clojurescript's equivalence, hash and comparison protocols to the java.time
 domain objects, providing externs and having the packages of java.time be mirrored by namespaces.
  
-For a Clojure(Script) api that uses this, checkout the cross-platform [tick](https://clojars.org/tick/versions/0.4.0-alpha) (v 0.4+) library
-and for tagged literals that read and print these objects, see [time-literals](https://clojars.org/time-literals)
+## Related Libraries
+
+[cljc.java-time](https://github.com/henryw374/cljc.java-time) offers a one for one mapping of the classes and methods from
+java.time into a Clojure(Script) library 
+ 
+Using that library is [tick](https://clojars.org/tick), an intuitive Clojure(Script) library for dealing with time, intended as a replacement for clj-time. 
+
+[time-literals](https://github.com/henryw374/time-literals) is a Clojure(Script) library which provides tagged literals for objects from jsr-310 domain and depends on this library
+  
+[my talk at Clojure/North 2019](https://www.youtube.com/watch?v=UFuL-ZDoB2U) provides some background
 
 ## Usage
 
@@ -28,16 +36,14 @@ If you would like to be able to use `=` and `sort` with the java.time objects
 (require 'cljs.java-time.extend-eq-and-compare)
 ```
 
-To write cross platform code that calls any getter methods on java.time objects, use the
-`cljs.java-time.interop/getter` macro
-
-### Cross Platform Example
+### Cross Platform (.cljc) Example
 
 ```
 (ns foo
   (:require
     #?(:cljs [java.time :refer [LocalDate]])
-    [time-literals.read-write])
+    [time-literals.read-write]
+    [cljs.java-time.interop :as t.i])
    #?(:clj (:import [java.time LocalDate])))
    
    
@@ -48,7 +54,19 @@ To write cross platform code that calls any getter methods on java.time objects,
     (. LocalDate parse "2020-12-01")
     (. LocalDate parse "2020-12-01"))
   ; => true  
+  
+  ; call a getter method
+  (let [l (. LocalDate parse "2020-12-01")]
+    (t.i/getter dayOfMonth l))
+  
 ```
+
+### Getter Methods
+Unfortunately, all java.time getter methods have had the 'get' part of their name removed in the underlying 
+ js lib. So instead of 'getNano' method, you have 'nano'. As a workaround, to write cross platform code that calls any getter methods on java.time objects, use the
+`cljs.java-time.interop/getter` macro
+
+
 
 ### Shadow Cljs
 
