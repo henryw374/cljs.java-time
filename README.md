@@ -68,15 +68,11 @@ Unfortunately, all java.time getter methods have had the 'get' part of their nam
 
 
 
-### Shadow Cljs
+### NPM Dependency 
 
-The npm library that provides the jsr-310 api is provided via Cljsjs, foreign-libs. To make this work with
-Shadow, add the following dependency:
-
-`[thheller/shadow-cljsjs "0.0.16"]`
-
-See [this demo](https://github.com/henryw374/tick-on-shadow-cljs-demo) for more info
-
+The npm library that provides the jsr-310 api is provided via a foreign-lib.
+Whilst this is handy if you don't already have an npm build step, if you do want to depend directly on the
+js-joda npm lib you can do so. For more info see the tick docs on [setup for use with ClojureScript](https://github.com/juxt/tick/blob/master/docs/cljs.adoc) 
 
 ## License
 
