@@ -1,5 +1,5 @@
 (ns java.time
-  (:require [cljsjs.js-joda]))
+  (:require [js-joda]))
 
 (def Period (.. js/JSJoda -Period))
 (def Instant (.. js/JSJoda -Instant))

@@ -1,13 +1,11 @@
 .PHONY: 		watch default deploy test
 
 pom:
-			rm pom.xml; clojure -Spom; echo "Now use git diff to add back in the non-generated bits of pom"
-# Dev pom is used to created development project with intellij
-dev-pom:
-			rm -f pom.xml && clj -R:dev:test-cljs -C:dev:test-cljs -Spom
-
+			rm -f pom.xml; clojure -Spom; echo "Now use git diff to add back in the non-generated bits of pom"
 deploy:
 			rm -rf target && mvn deploy
+repl:
+			clj -Adev -m cljs.main -re node
 figwheel:
 			clj -R:dev:dev -C:dev:dev -m figwheel.main --build cljs.java-time --repl
 test-cljs:
