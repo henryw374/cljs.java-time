@@ -8,6 +8,7 @@
 (def LocalTime (.. js-joda -LocalTime))
 (def ZonedDateTime (.. js-joda -ZonedDateTime))
 (def LocalDateTime (.. js-joda -LocalDateTime))
+(def MonthDay (.. js-joda -MonthDay))
 (def Year (.. js-joda -Year))
 (def YearMonth (.. js-joda -YearMonth))
 (def ZoneId (.. js-joda -ZoneId))

@@ -14,7 +14,8 @@
                                Duration
                                Period
                                ZoneId
-                               DayOfWeek]]))
+                               DayOfWeek
+                               MonthDay]]))
 
 (def nowable
   [LocalDate
@@ -25,7 +26,8 @@
    OffsetDateTime
    LocalTime
    Year
-   YearMonth])
+   YearMonth
+   MonthDay])
 
 (def others [(. Month -MAY)
              (. Duration parse "PT1M")
