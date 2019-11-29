@@ -29,13 +29,6 @@ get it from [Clojars](https://clojars.org/cljs.java-time)
 
 (.parse LocalDate "2020-01-01")
 ```
-
-If you would like to be able to use `=` and `sort` with the java.time objects
-
-```
-(require 'cljs.java-time.extend-eq-and-compare)
-```
-
 ### Cross Platform (.cljc) Example
 
 ```
