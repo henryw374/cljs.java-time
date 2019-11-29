@@ -1,6 +1,5 @@
 (ns cljs.java-time.extend-eq-and-compare-test
-  (:require [cljs.java-time.extend-eq-and-compare]
-            [clojure.test :refer [deftest is are]]
+  (:require [clojure.test :refer [deftest is are]]
             [java.time :refer [LocalDate
                                LocalDateTime
                                ZonedDateTime
