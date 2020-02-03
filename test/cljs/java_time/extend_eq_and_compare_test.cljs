@@ -14,7 +14,10 @@
                                Period
                                ZoneId
                                DayOfWeek
-                               MonthDay]]))
+                               MonthDay]]
+            [java.time.format :refer [DateTimeFormatter
+                                      DateTimeFormatterBuilder]]
+            [java.time.temporal :refer [ChronoField]]))
 
 (def nowable
   [LocalDate
@@ -41,8 +44,30 @@
   (is (>= x x))
   (is (<= x x)))
 
-(deftest test-extensions 
+(deftest test-extensions
   (doseq [c nowable]
     (assert-fns (. c now)))
   (doseq [o others]
     (assert-fns o)))
+
+(deftest test-formatter
+  (let [formatter (. DateTimeFormatter ofPattern "yyyy MM dd")
+        date (. LocalDate now)
+        text (. date format formatter)
+        parsed (. LocalDate parse text formatter)]
+    (is (= date parsed))))
+
+(deftest test-formatter-builder
+  (let [builder (new DateTimeFormatterBuilder)
+        formatter (. (. (. (. builder appendLiteral "Date is: ")
+                           appendValue
+                           (.. ChronoField -DAY_OF_YEAR)
+                           3)
+                        appendValue
+                        (.. ChronoField -YEAR)
+                        4)
+                     toFormatter)
+        date (. LocalDate now)
+        text (. date format formatter)
+        parsed (. LocalDate parse text formatter)]
+    (is (= date parsed))))
