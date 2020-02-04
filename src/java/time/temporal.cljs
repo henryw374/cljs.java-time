@@ -6,4 +6,4 @@
 (def TemporalAmount (.. js-joda -TemporalAmount))
 (def ChronoUnit (.. js-joda -ChronoUnit))
 (def ChronoField (.. js-joda -ChronoField))
-
+(def IsoFields (.. js-joda -IsoFields))

@@ -16,8 +16,10 @@
                                DayOfWeek
                                MonthDay]]
             [java.time.format :refer [DateTimeFormatter
-                                      DateTimeFormatterBuilder]]
-            [java.time.temporal :refer [ChronoField]]))
+                                      DateTimeFormatterBuilder
+                                      ResolverStyle]]
+            [java.time.temporal :refer [ChronoField
+                                        IsoFields]]))
 
 (def nowable
   [LocalDate
@@ -57,17 +59,41 @@
         parsed (. LocalDate parse text formatter)]
     (is (= date parsed))))
 
+(def chrono-field-fmt
+  (. (. (. (. (new DateTimeFormatterBuilder)
+              appendLiteral
+              "Date is: ")
+           appendValue
+           (.. ChronoField -DAY_OF_YEAR)
+           3)
+        appendValue
+        (.. ChronoField -YEAR)
+        4)
+     toFormatter))
+
 (deftest test-formatter-builder
-  (let [builder (new DateTimeFormatterBuilder)
-        formatter (. (. (. (. builder appendLiteral "Date is: ")
-                           appendValue
-                           (.. ChronoField -DAY_OF_YEAR)
-                           3)
-                        appendValue
-                        (.. ChronoField -YEAR)
-                        4)
-                     toFormatter)
-        date (. LocalDate now)
-        text (. date format formatter)
-        parsed (. LocalDate parse text formatter)]
+  (let [date (. LocalDate now)
+        text (. date format chrono-field-fmt)
+        parsed (. LocalDate parse text chrono-field-fmt)]
     (is (= date parsed))))
+
+
+(def iso-field-fmt
+  (. (. (. (. (. (new DateTimeFormatterBuilder)
+              appendValue
+              (.. IsoFields -DAY_OF_QUARTER)
+              2)
+           appendValue
+           (.. IsoFields -QUARTER_OF_YEAR)
+           1)
+        appendValue
+        (.. ChronoField -YEAR)
+        4)
+        toFormatter)
+     withResolverStyle
+     (. ResolverStyle -SMART)))
+
+(deftest iso-formatter
+  (let [date (. LocalDate of 2019 07 13)
+        text (. date format iso-field-fmt)]
+    (is (= text "1332019"))))
