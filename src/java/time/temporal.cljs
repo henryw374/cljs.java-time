@@ -6,4 +6,11 @@
 (def TemporalAmount (.. js-joda -TemporalAmount))
 (def ChronoUnit (.. js-joda -ChronoUnit))
 (def ChronoField (.. js-joda -ChronoField))
-
+(def IsoFields (.. js-joda -IsoFields))
+(def TemporalAccessor (.. js-joda -TemporalAccessor))
+(def TemporalAdjuster (.. js-joda -TemporalAdjuster))
+(def TemporalQuery (.. js-joda -TemporalQuery))
+(def TemporalQueries (.. js-joda -TemporalQueries))
+(def TemporalUnit (.. js-joda -TemporalUnit))
+(def ValueRange (.. js-joda -ValueRange))
+(def TemporalField (.. js-joda -TemporalField))
