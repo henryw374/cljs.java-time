@@ -60,16 +60,11 @@
     (is (= date parsed))))
 
 (def chrono-field-fmt
-  (. (. (. (. (new DateTimeFormatterBuilder)
-              appendLiteral
-              "Date is: ")
-           appendValue
-           (.. ChronoField -DAY_OF_YEAR)
-           3)
-        appendValue
-        (.. ChronoField -YEAR)
-        4)
-     toFormatter))
+  (-> (new DateTimeFormatterBuilder)
+      (.appendLiteral "Date is: ")
+      (.appendValue (.. ChronoField -DAY_OF_YEAR) 3)
+      (.appendValue (.. ChronoField -YEAR) 4)
+      (.toFormatter)))
 
 (deftest test-formatter-builder
   (let [date (. LocalDate now)
@@ -77,21 +72,13 @@
         parsed (. LocalDate parse text chrono-field-fmt)]
     (is (= date parsed))))
 
-
 (def iso-field-fmt
-  (. (. (. (. (. (new DateTimeFormatterBuilder)
-              appendValue
-              (.. IsoFields -DAY_OF_QUARTER)
-              2)
-           appendValue
-           (.. IsoFields -QUARTER_OF_YEAR)
-           1)
-        appendValue
-        (.. ChronoField -YEAR)
-        4)
-        toFormatter)
-     withResolverStyle
-     (. ResolverStyle -SMART)))
+  (-> (new DateTimeFormatterBuilder)
+      (.appendValue (.. IsoFields -DAY_OF_QUARTER)  2)
+      (.appendValue (.. IsoFields -QUARTER_OF_YEAR) 1)
+      (.appendValue (.. ChronoField -YEAR) 4)
+      (.toFormatter)
+      (.withResolverStyle (. ResolverStyle -SMART))))
 
 (deftest iso-formatter
   (let [date (. LocalDate of 2019 07 13)
