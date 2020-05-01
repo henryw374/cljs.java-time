@@ -1,5 +1,5 @@
 (ns java.time.format
-  (:require [js-joda]))
+  (:require ["@js-joda/core" :as js-joda]))
 
 (def DateTimeFormatter (.. js-joda -DateTimeFormatter))
 (def DateTimeFormatterBuilder (.. js-joda -DateTimeFormatterBuilder))

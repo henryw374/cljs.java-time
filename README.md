@@ -1,13 +1,16 @@
 # cljs.java.time
 
-A Clojurescript library that provides the jsr-310 (java.time) api.
+A Clojurescript library that provides the jsr-310 (java.time) api. 
 
-Note: this is not a wrapper library, meaning there are not additional Clojurescript
-functions, only what java.time provides. 
+Since v0.1.16 this requires Clojurescript version 1.10.741 or higher 
 
-Underneath this lib is a pure JS implementation of java.time. This extends that by
-adding Clojurescript's equivalence, hash and comparison protocols to the java.time
-domain objects, providing externs and having the packages of java.time be mirrored by namespaces.
+Underneath this lib is a pure JS implementation of java.time. This library just aims to make that 
+library usable from Clojurescript:
+
+* it adds Clojurescript's equivalence, hash and comparison protocols to the java.time
+domain objects
+* it provides externs
+* the java.time packages are mirrored by Clojurescript namespaces.
  
 ## Related Libraries
 

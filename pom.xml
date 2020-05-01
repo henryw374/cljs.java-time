@@ -3,13 +3,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>cljs.java-time</groupId>
   <artifactId>cljs.java-time</artifactId>
-  <version>0.1.15</version>
+  <version>0.1.16</version>
   <name>cljs.java-time</name>
   <dependencies>
     <dependency>
       <groupId>henryw374</groupId>
       <artifactId>js-joda</artifactId>
-      <version>1.10.1-1</version>
+      <version>1.12.0-1</version>
     </dependency>
     <dependency>
       <groupId>net.cgrand</groupId>

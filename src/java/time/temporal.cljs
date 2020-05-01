@@ -1,5 +1,5 @@
 (ns java.time.temporal
-  (:require [js-joda]))
+  (:require ["@js-joda/core" :as js-joda]))
 
 (def TemporalAdjusters (.. js-joda -TemporalAdjusters))
 (def Temporal (.. js-joda -Temporal))
