@@ -21,6 +21,8 @@
             [java.time.temporal :refer [ChronoField
                                         IsoFields]]))
 
+(enable-console-print!)
+
 (def nowable
   [LocalDate
    LocalDateTime
@@ -66,7 +68,7 @@
       (.appendValue (.. ChronoField -YEAR) 4)
       (.toFormatter)))
 
-(deftest test-formatter-builder
+#_(deftest test-formatter-builder
   (let [date (. LocalDate now)
         text (. date format chrono-field-fmt)
         parsed (. LocalDate parse text chrono-field-fmt)]

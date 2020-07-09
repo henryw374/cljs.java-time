@@ -1,16 +1,14 @@
 {:paths   ["src"]
- :deps    {henryw374/js-joda    {:mvn/version "1.12.0-1"}
-           net.cgrand/macrovich {:mvn/version "0.2.0" :exclusions [org.clojure/clojurescript]}}
+ :deps    {net.cgrand/macrovich {:mvn/version "0.2.0" :exclusions [org.clojure/clojurescript]}}
  :aliases {:dev
-                      {:extra-paths ["dev"]
-                       :extra-deps  {com.bhauman/figwheel-main       {:mvn/version "0.1.9"}
-                                     org.clojure/clojure             {:mvn/version "1.10.1"}
-                                     org.clojure/clojurescript       {:mvn/version "1.10.741"}
-                                     com.bhauman/rebel-readline      {:mvn/version "0.1.1"}
-                                     com.bhauman/rebel-readline-cljs {:mvn/version "0.1.4"}}}
+                      {:extra-paths ["dev" "test"]
+                       :extra-deps  {org.clojure/clojure       {:mvn/version "1.10.1"}
+                                     org.clojure/clojurescript {:mvn/version "1.10.741"
+                                                                ;:local/root "../clojurescript"
+                                                                }}}
            :pack      {:extra-deps {pack/pack.alpha {:git/url "https://github.com/juxt/pack.alpha.git"
                                                      :sha     "81b9e47d992b17aa3e3af1a47aed1f0287ebe9b8"}}
                        :main-opts  ["-m"]}
            :test-cljs {:extra-paths ["test" "cljs-test-runner-out/gen"]
-                       :extra-deps  {olical/cljs-test-runner   {:mvn/version "3.5.0"}}
+                       :extra-deps  {olical/cljs-test-runner {:mvn/version "3.5.0"}}
                        :main-opts   ["-m" "cljs-test-runner.main" "-c" "test/cljs-test-opts.edn -x chrome-headless"]}}}

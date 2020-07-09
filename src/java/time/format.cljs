@@ -1,9 +1,9 @@
 (ns java.time.format
-  (:require ["@js-joda/core" :as js-joda]))
+  (:require [raw.jsjoda]))
 
-(def DateTimeFormatter (.. js-joda -DateTimeFormatter))
-(def DateTimeFormatterBuilder (.. js-joda -DateTimeFormatterBuilder))
-(def DecimalStyle (.. js-joda -DecimalStyle))
-(def ResolverStyle (.. js-joda -ResolverStyle))
-(def SignStyle (.. js-joda -SignStyle))
-(def TextStyle (.. js-joda -TextStyle))
+(def DateTimeFormatter (.. raw.jsjoda -DateTimeFormatter))
+(def DateTimeFormatterBuilder (.. raw.jsjoda -DateTimeFormatterBuilder))
+(def DecimalStyle (.. raw.jsjoda -DecimalStyle))
+(def ResolverStyle (.. raw.jsjoda -ResolverStyle))
+(def SignStyle (.. raw.jsjoda -SignStyle))
+(def TextStyle (.. raw.jsjoda -TextStyle))

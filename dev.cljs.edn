@@ -1,0 +1,7 @@
+^{:auto-testing true
+  :open-url false
+  :watch-dirs ["src" "test"]
+  :ring-server-options {:port 9504}}
+{:main cljs.java-time.extend-eq-and-compare-test
+ :output-to "target/cljs-out/main.js"
+ :load-warninged-code true}
