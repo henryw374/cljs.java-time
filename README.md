@@ -32,6 +32,17 @@ get it from [Clojars](https://clojars.org/cljs.java-time)
 
 (.parse LocalDate "2020-01-01")
 ```
+
+### Shadow-Cljs 
+
+At least one Shadow build (node-test) needs to be manually provided with externs, ie
+
+```
+:compiler-options {:externs ["cljsjs/js-joda/common/js-joda-dup.ext.js"]}
+```
+
+Shadow browser build and regular node build do not need any additional opts.
+
 ### Cross Platform (.cljc) Example
 
 ```
