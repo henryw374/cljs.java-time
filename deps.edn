@@ -1,5 +1,5 @@
 {:paths   ["src"]
- :deps    {henryw374/js-joda    {:mvn/version "1.12.0-1"}
+ :deps    {henryw374/js-joda    {:mvn/version "3.2.0-0"}
            net.cgrand/macrovich {:mvn/version "0.2.0" :exclusions [org.clojure/clojurescript]}}
  :aliases {:dev
                       {:extra-paths ["dev"]

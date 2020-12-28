@@ -7,6 +7,8 @@
                       LocalDate
                       LocalTime
                       ZonedDateTime
+                      OffsetDateTime
+                      OffsetTime
                       LocalDateTime
                       Year
                       YearMonth
@@ -29,6 +31,8 @@
               LocalDate
               LocalTime
               ZonedDateTime
+              OffsetDateTime
+              OffsetTime
               LocalDateTime
               Year
               YearMonth

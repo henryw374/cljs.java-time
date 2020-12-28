@@ -16,10 +16,8 @@
 (def Month (.. js-joda -Month))
 (def Clock (.. js-joda -Clock))
 (def ZoneOffset (.. js-joda -ZoneOffset))
-
-;; Following are not yet implemented in js-joda https://github.com/js-joda/js-joda/issues/165
-(def OffsetDateTime (.. js-joda -ZonedDateTime))
-(def OffsetTime (.. js-joda -LocalTime))
+(def OffsetDateTime (.. js-joda -OffsetDateTime))
+(def OffsetTime (.. js-joda -OffsetTime))
 
 (extend-protocol IComparable
   Period (-compare [x y] (.compareTo x y))
