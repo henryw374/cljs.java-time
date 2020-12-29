@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>cljs.java-time</groupId>
   <artifactId>cljs.java-time</artifactId>
-  <version>0.1.17</version>
+  <version>0.1.18</version>
   <name>cljs.java-time</name>
   <dependencies>
     <dependency>
