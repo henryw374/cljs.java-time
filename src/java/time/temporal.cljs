@@ -1,5 +1,6 @@
 (ns java.time.temporal
-  (:require ["@js-joda/core" :as js-joda]))
+  (:require [goog.object]
+            ["@js-joda/core" :as js-joda]))
 
 (def TemporalAdjusters (goog.object/get js-joda "TemporalAdjusters"))
 (def Temporal (goog.object/get js-joda "Temporal"))

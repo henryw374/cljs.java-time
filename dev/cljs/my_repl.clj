@@ -13,7 +13,8 @@
 (comment 
   
   (node-repl)
-  
+  (require '[cljs.java-time.extend-eq-and-compare-test])
+
   )
 
  

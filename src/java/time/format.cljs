@@ -1,5 +1,6 @@
 (ns java.time.format
-  (:require ["@js-joda/core" :as js-joda]))
+  (:require [goog.object]
+            ["@js-joda/core" :as js-joda]))
 
 (def DateTimeFormatter (goog.object/get js-joda "DateTimeFormatter"))
 (def DateTimeFormatterBuilder (goog.object/get js-joda "DateTimeFormatterBuilder"))

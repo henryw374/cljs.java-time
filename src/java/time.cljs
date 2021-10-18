@@ -1,5 +1,7 @@
 (ns java.time
-  (:require ["@js-joda/core" :as js-joda]))
+  (:require 
+    [goog.object]
+    ["@js-joda/core" :as js-joda]))
 
 (def Period (goog.object/get js-joda "Period"))
 (def Instant (goog.object/get js-joda "Instant"))
