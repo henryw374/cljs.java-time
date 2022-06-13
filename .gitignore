@@ -1,6 +1,10 @@
 .cpcache
 node_modules
 .idea
+.shadow-cljs
+web-target/public/*
+package.json
+package-lock.json
 /target
 *.iml
 /classes
