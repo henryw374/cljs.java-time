@@ -1,3 +1,8 @@
+[![Clojars Project](https://img.shields.io/clojars/v/com.widdindustries/time-literals.svg)](https://clojars.org/com.widdindustries/cljs.java-time)
+
+[![Tests build](https://github.com/henryw374/time-literals/actions/workflows/tests.yaml/badge.svg)](https://github.com/henryw374/cljs.java-time/actions/workflows/tests.yaml)
+
+
 # cljs.java.time
 
 A Clojurescript library that provides the jsr-310 (java.time) api. 
@@ -85,5 +90,4 @@ js-joda npm lib you can do so. For more info see the tick docs on [setup for use
 
 Copyright © 2019 Widd Industries
 
-Distributed under the Eclipse Public License either version 1.0 or (at
-your option) any later version.
+Distributed under the [MIT License](/LICENSE)
