@@ -1,4 +1,4 @@
-[![Clojars Project](https://img.shields.io/clojars/v/com.widdindustries/time-literals.svg)](https://clojars.org/com.widdindustries/cljs.java-time)
+[![Clojars Project](https://img.shields.io/clojars/v/com.widdindustries/cljs.java-time.svg)](https://clojars.org/com.widdindustries/cljs.java-time)
 
 [![Tests build](https://github.com/henryw374/time-literals/actions/workflows/tests.yaml/badge.svg)](https://github.com/henryw374/cljs.java-time/actions/workflows/tests.yaml)
 
