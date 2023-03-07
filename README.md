@@ -30,7 +30,9 @@ Using that library is [tick](https://clojars.org/tick), an intuitive Clojure(Scr
 
 ## Usage
 
-get it from [Clojars](https://clojars.org/cljs.java-time) 
+get it from [Clojars](https://clojars.org/cljs.java-time)
+
+If using cljsjs, add [js-joda](https://clojars.org/henryw374/js-joda) to your dependencies as well
 
 ```
 (require '[java.time :refer [LocalDate]])
